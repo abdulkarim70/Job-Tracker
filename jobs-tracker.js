@@ -7,8 +7,12 @@ const rejectedBtn=document.getElementById('rejected-btn')
 const cardInterviewBtn=document.querySelectorAll('#card-interview-btn')
 const cardRejectedBtn=document.querySelectorAll('#card-rejected-btn')
 const noJobNotification=document.getElementById('no-jobs-notification')
-console.log(noJobNotification)
+rejectedBtn.addEventListener('click',function(){
+    noJobNotification.classList.remove('hidden')
+    allCards.classList.add('hidden')
 
+})
+console.log(allCards.parentNode.parentNode)
 
 totalCount.innerText=allCards.children.length
 availableJobsCount.innerText=allCards.children.length
