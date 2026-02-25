@@ -7,12 +7,19 @@ const rejectedBtn=document.getElementById('rejected-btn')
 const cardInterviewBtn=document.querySelectorAll('#card-interview-btn')
 const cardRejectedBtn=document.querySelectorAll('#card-rejected-btn')
 const noJobNotification=document.getElementById('no-jobs-notification')
-rejectedBtn.addEventListener('click',function(){
-    noJobNotification.classList.remove('hidden')
-    allCards.classList.add('hidden')
+const deleteBtn=document.getElementsByClassName('delete-btn')
+
+
+allCards.addEventListener('click', function(event){
+    const deleteButton=event.target.closest('.delete-btn')
+    if(deleteButton){
+
+deleteButton.closest('.delete-btn').remove()
+    }
 
 })
-console.log(allCards.parentNode.parentNode)
+
+
 
 totalCount.innerText=allCards.children.length
 availableJobsCount.innerText=allCards.children.length
